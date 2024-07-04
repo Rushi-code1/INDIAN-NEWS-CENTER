@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IIBN Search Result</title>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+    </style>
+        <link rel="icon" type="image/x-icon"
+            href="{{url_for('static',filename='favicon.png')}}">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous">
+    </head>
+
+    <body>
+
+        <body style="background-image: linear-gradient(rgba(0, 8, 51, 0.9),
+            rgba(0, 8, 51, 0.9)), url('static/background.jpg');">
+            <div class="container-fluid m-0 p-0">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <img src="{{url_for('static',filename='favicon.png')}}"
+                            alt="icon.png" height="40px">
+                        <a style="margin-left: 10px;" class="navbar-brand
+                            text-warning" href="/">IIBN</a>
+                        <button class="navbar-toggler" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle
+                            navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page"
+                                        href="/websearch" id="business1">Website
+                                        search</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page"
+                                        href="/youtubeSearch" id="business1">YouTube
+                                        search</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page"
+                                        href="https://t.me/SSBTCOET_bot" id="">Telegram
+                                        bot</a>
+                                </li>
+                            </ul>
+
+                            <form class="d-flex" style="padding-left:400px;"
+                                action="/submit" method="post">
+                                <input class="form-control me-2" type="text"
+                                    id="newsQuery2" placeholder="Enter News
+                                    Website link" name="weblink">
+                                <input class="btn btn-outline-warning"
+                                    type="submit" id="searchBtn3"
+                                    value="Submit">
+                            </form>
+
+
+                        </div>
+                    </nav>
+                    <div style="color:rgb(204, 196, 181)">
+                        {% if country == 'India' %}
+                        <i>
+                            <h1 style="text-align: center; font-family: 'Bree
+                                Serif',
+                                serif; font-size: 60px; padding:10px">It's A
+                                Indian Based News
+                                Website</h1>
+                        </i> {% else %}
+                        <i>
+                            <h1 style="text-align: center;font-family: 'Bree
+                                Serif',
+                                serif; font-size: 60px; padding:10px">It's Not A
+                                Indian Based
+                                News website</h1>
+                        </i> {% endif %}
+                        <H3 style="font-size:30px;font-family: 'Bree Serif',
+                            serif; padding: 5px;">Some
+                            Information About News website :- </H3>
+                        <div style="align-items: center; display :
+                            inline-block;padding-left: 22%; padding-right:
+                            22%;">
+                            <dl class="row" style="margin-left:
+                                10px;font-family:
+                                serif;
+                                font-size: x-large;">
+                                <dt class="col-sm-3"> Domain Name:-</dt>
+                                <dd class="col-sm-9">{{domain_name}}</dd>
+
+                                <dt class="col-sm-3">Register:-</dt>
+                                <dd class="col-sm-9">{{registrar}}</dd>
+
+                                <dt class="col-sm-3">register_url:-</dt>
+                                <dd class="col-sm-9"> {{registrar_url}}</dd>
+
+                                <dt class="col-sm-3">updated_date:-</dt>
+                                <dd class="col-sm-9">{{updated_date}}</dd>
+
+                                <dt class="col-sm-3">creation_date:-</dt>
+                                <dd class="col-sm-9">{{creation_date}}</dd>
+
+                                <dt class="col-sm-3">expiration_date:-</dt>
+                                <dd class="col-sm-9">{{expiration_date}}</dd>
+                                <dt class="col-sm-3">name_servers:- </dt>
+                                <dd class="col-sm-9">{{name_servers}}</dd>
+
+                                <dt class="col-sm-3">organization:-</dt>
+                                <dd class="col-sm-9">{{organization}}</dd>
+
+                                <dt class="col-sm-3">Email:-</dt>
+                                <dd class="col-sm-9">{{emails}}</dd>
+
+                                <dt class="col-sm-3">state:-</dt>
+                                <dd class="col-sm-9">{{state}}</dd>
+
+                                <dt class="col-sm-3">country:-</dt>
+                                <dd class="col-sm-9">{{country}}</dd>
+
+                                <dt class="col-sm-3">dnssec:-</dt>
+                                <dd class="col-sm-9">{{dnssec}}</dd>
+
+
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <div>
+                            <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-4">
+                                <div class="container-fluid m-0 p-0">
+                                    <h5 class="text-white me-auto ms-auto">II<span class="text-warning">BN</span></h5>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+
+                    <script
+                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+                        crossorigin="anonymous"></script>
+                </body>
+
+            </html>

@@ -1,0 +1,46 @@
+#loading {
+    width: 100%;
+    height: 100vh;
+    background: #fff url('https://loading.io/spinners/progress-pie/lg.percent-circular-preloader-gif.gif');
+}
+
+input#newsQuery {
+    display: -webkit-inline-box;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-image: linear-gradient(rgba(0, 8, 51, 0.9), rgba(0, 8, 51, 0.9)), url('static/background.jpg');
+    background-clip: border-box;
+    border: 2px solid rgba(0, 0, 0, .125);
+    border-radius: 0.25rem;
+    color: rosybrown;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+    color: aqua;
+}
+
+.text-muted {
+    --bs-text-opacity: 1;
+    color: aliceblue!important;
+}
+
+.btn-outline-warning {
+    color: rgb(201, 27, 47);
+    border-color: #ffc107;
+}
+
+br {
+    margin: 20px;
+}
+
+.btn-dark:hover {
+    color: aqua;
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
